@@ -54,7 +54,8 @@ module.exports = {
       },
       fontFamily:{
         nyapanese:['Noto Sans Japanese' ],
-        micro:["'Micro 5'"]
+        micro:["'Micro 5'"],
+        open_sans:["Open Sans"]
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,16 +1,3 @@
-
-import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-  } from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
 import ListCheck from '../assets/list-checks.svg?react';
 import Done from '../assets/check-square.svg?react';
 import Delete from '../assets/delete.svg?react';
@@ -32,7 +19,7 @@ export default function SideNav() {
         }
     ]
     return (
-        <div className="p-3 max-w-52 bg-[#926c4d] rounded-[.5rem] h-full overflow-hidden">
+        <div className="py-4 px-6 max-w-52 bg-[#926c4d] rounded-[.5rem] h-full overflow-hidden">
             <div className="flex justify-between items-center border-b-2 mb-2">
                 <p className="font font-bold text-white font-micro text-[2rem]">ToDo List</p>
                 <button className="p-1 text-white bg-gray-500 rounded-[.5rem]"><Close/></button>

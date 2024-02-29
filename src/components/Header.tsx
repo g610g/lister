@@ -27,7 +27,7 @@ export default function Header() {
         <div className='w-1/2'>
             <ul className='flex justify-around'>
                 {header_list.map((value, i) => {
-                    return <li key={i} className='text-2xl font-Raleway text-white'>{value}</li>
+                    return <li key={i} className='text-2xl font-open_sans text-white'>{value}</li>
                 })}
             </ul>
         </div>
