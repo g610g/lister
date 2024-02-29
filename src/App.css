@@ -1,7 +1,11 @@
 #root {
-  max-width: 100%;
+  max-width: 100wh;
   min-height: 100vh;
   padding: 1rem;
-  background: rgb(25,39,78);
-  background: linear-gradient(180deg, rgba(25,39,78,1) 11%, rgba(52,109,107,1) 51%, rgba(68,149,116,1) 91%);
+  /* background: rgb(25,39,78); */
+  /* background: linear-gradient(180deg, rgba(25,39,78,1) 11%, rgba(52,109,107,1) 51%, rgba(68,149,116,1) 91%); */
+  background-color: #526935;
 }
+/* body{
+  
+} */
