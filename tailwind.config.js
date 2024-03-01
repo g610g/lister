@@ -51,6 +51,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        background_brown: "#926c4d"
       },
       fontFamily:{
         nyapanese:['Noto Sans Japanese' ],
