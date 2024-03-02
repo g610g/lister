@@ -13,7 +13,6 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { Toaster } from "./ui/toaster";
 import { useToast } from "./ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "./ui/button";
@@ -22,7 +21,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod/src/zod.js";
 import { db } from "@/utils/supabase";
-import { useState } from "react";
 const formSchema = z.object({
   title: z.string().min(5, {
     message: "title must be at least 5 characters long",
@@ -32,10 +30,7 @@ const formSchema = z.object({
   }),
 });
 export default function NewTask() {
-  const [hasError, setHaserror] = useState<boolean>(false);
-  const [showToast, setShowToast] = useState<boolean>(false);
   const { toast } = useToast();
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {

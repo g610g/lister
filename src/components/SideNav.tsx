@@ -29,9 +29,11 @@ export default function SideNav() {
         </button>
       </div>
       <div className="space-y-4">
-        {side_bar_items.map((value, index) => {
-          return <SideBarItem data={value} index={index} />;
-        })}
+        {side_bar_items.map((value, index) => (
+          <div key={index}>
+            <SideBarItem data={value} index={index} />
+          </div>
+        ))}
       </div>
     </div>
   );

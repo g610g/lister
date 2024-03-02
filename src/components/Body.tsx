@@ -2,7 +2,7 @@ import SideNav from "./SideNav";
 import Lists from "./Lists";
 export default function Body() {
   return (
-    <div className="mt-10 flex justify-between mx-[2rem] ">
+    <div className="mt-10 flex justify-between mx-[2rem] max-h-full h-full flex-1">
       <SideNav />
       <Lists />
     </div>
