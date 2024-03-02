@@ -14,6 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Textarea } from "@/components/ui/textarea";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useForm } from "react-hook-form";
@@ -36,20 +37,21 @@ export default function NewTask() {
   });
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
+    //fetch values here
   };
   return (
     <Dialog>
       <DialogTrigger className="bg-background_brown rounded-xl text-2xl font-micro text-white py-2 px-[5rem]">
         NewTask
       </DialogTrigger>
-      <DialogContent className="bg-white">
+      <DialogContent className="bg-[#ad9f8e] py-10">
         <DialogHeader>
           <DialogTitle className="font-micro text-2xl">
             Create new Task
           </DialogTitle>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
-              <div>
+              <div className="space-y-[3rem]">
                 <div className="">
                   <FormField
                     control={form.control}
@@ -64,30 +66,41 @@ export default function NewTask() {
                           />
                         </FormControl>
                         <FormDescription />
+                        <FormMessage className="text-[#526935] font-bold" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="description"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          {/* <Input
+                            placeholder="Task Description"
+                            {...field}
+                            className=" font-open_sans text-md bg-background_brown border-none rounded-xl py-[2rem]"
+                          /> */}
+                          <Textarea
+                            placeholder="description"
+                            {...field}
+                            className="bg-background_brown border-none rounded-xl "
+                          />
+                        </FormControl>
+                        <FormDescription />
                         <FormMessage className="text-red-500 font-bold" />
                       </FormItem>
                     )}
                   />
                 </div>
-                <FormField
-                  control={form.control}
-                  name="description"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="Task Description"
-                          {...field}
-                          className=" font-open_sans text-md"
-                        />
-                      </FormControl>
-                      <FormDescription />
-                      <FormMessage className="text-red-500 font-bold" />
-                    </FormItem>
-                  )}
-                />
               </div>
-              <Button>Add</Button>
+              <div className="text-right mt-6">
+                <Button className="bg-[#637f40] rounded-2xl px-[4rem] font-micro text-4xl text-center py-[.5rem]">
+                  Add
+                </Button>
+              </div>
             </form>
           </Form>
         </DialogHeader>
