@@ -11,7 +11,6 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,6 +19,7 @@ import { Input } from "./ui/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod/src/zod.js";
+import { db } from "@/utils/supabase";
 const formSchema = z.object({
   title: z.string().min(5, {
     message: "title must be at least 5 characters long",
@@ -36,8 +36,16 @@ export default function NewTask() {
     },
   });
   const onSubmit = (values: z.infer<typeof formSchema>) => {
+    insertTodos(values);
     console.log(values);
-    //fetch values here
+  };
+
+  const insertTodos = async (values: z.infer<typeof formSchema>) => {
+    const { error } = await db.todos().insert({
+      title: values.title,
+      description: values.description,
+    });
+    console.log(error);
   };
   return (
     <Dialog>
@@ -78,11 +86,6 @@ export default function NewTask() {
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
-                          {/* <Input
-                            placeholder="Task Description"
-                            {...field}
-                            className=" font-open_sans text-md bg-background_brown border-none rounded-xl py-[2rem]"
-                          /> */}
                           <Textarea
                             placeholder="description"
                             {...field}
