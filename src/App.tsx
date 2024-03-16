@@ -3,7 +3,7 @@ import "./App.css";
 import Body from "./components/Body";
 function App() {
   return (
-    <div className="h-full flex w-full justify-between">
+    <div className="flex mx-auto">
       <Body />
     </div>
   );

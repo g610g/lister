@@ -15,7 +15,7 @@ export default function Lists() {
     data ? setList(data) : console.log(error);
   };
   return (
-    <div className="flex-grow ml-[10rem] p-4 overflow-auto flex flex-col h-full">
+    <div className=" w-3/4 ml-[10rem] p-4 overflow-auto flex flex-col ">
       <h1 className="text-[3rem] font-bold text-white font-micro">
         Things To Do:
       </h1>

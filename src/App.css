@@ -1,7 +1,8 @@
 #root {
-  max-width: 100wh;
+  margin-inline: auto;
   min-height: 100vh;
-  max-height: 100%;
+  max-width: 1500px;
+  /* max-height: 100%; */
   /* overflow: hidden; */
   padding: 1rem;
   /* background: rgb(25,39,78); */
@@ -9,5 +10,4 @@
 }
 body {
   background-color: #526935;
-  max-height: 100vh;
 }

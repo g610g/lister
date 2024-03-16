@@ -3,7 +3,7 @@ import { Toaster } from "../ui/toaster";
 export default function MainLayout({ children }: any) {
   return (
     <>
-      <main className="max-h-full">
+      <main>
         <Header />
         {children}
       </main>

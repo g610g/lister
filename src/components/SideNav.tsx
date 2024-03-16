@@ -19,7 +19,7 @@ export default function SideNav() {
     },
   ];
   return (
-    <div className="py-4 px-6 max-w-52 bg-[#926c4d] rounded-[.5rem] h-full overflow-hidden">
+    <div className="py-4 px-6 max-w-52 bg-[#926c4d] rounded-[.5rem] min-h-full overflow-hidden">
       <div className="flex justify-between items-center border-b-2 mb-2">
         <p className="font font-bold text-white font-micro text-[2rem]">
           ToDo List
